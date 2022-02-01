@@ -1,0 +1,69 @@
+# Texture2DMS.Load Method
+
+Reference
+
+## Definition
+
+Reads texture data from a [Texture2DMS](#Texture2DMS.md).
+
+#### In this article
+
+*  [Definition](#definition)
+*  [Overloads](#overloads)
+
+## Overloads
+
+| Method | Description |
+| ------ | ----------- |
+| [Load(int2,int)](#Load-int2-int) | Reads texture data. |
+| [Load(int2,int,uint)](#Load-int2-int-uint) | Reads texture data and returns status of the operation. |
+
+## Load(int2,int) {#Load-int2-int}
+
+Reads texture data and returns status of the operation.
+
+```HLSL
+Load(
+  in  int2 Location,
+  in  int sampleIndex
+);
+```
+
+### Parameters
+<i>Location</i> [in] int2
+The texture coordinates; the first and second components contain the (x, y) coordinates.  This method uses a 0-based coordinate system and not a 0.0-1.0 UV system.
+
+<i>sampleIndex</i> [in] int
+The sample index.
+
+### Returns
+The return type matches the type in the declaration for the Texture2DMS object.
+
+## Load(int2,int,uint) {#Load-int2-int-uint}
+
+Reads texture data and returns status of the operation.
+
+```HLSL
+Load(
+  in  int2 Location,
+  in  int sampleIndex,
+  in  int Offset2,
+  out uint Status
+);
+```
+
+### Parameters
+<i>Location</i> [in] int2
+The texture coordinates; the first and second components contain the (x, y) coordinates.  This method uses a 0-based coordinate system and not a 0.0-1.0 UV system.
+
+<i>sampleIndex</i> [in] int
+The sample index.
+
+<i>Offset</i> [in] int2
+The offset applied to the texture coordinates before sampling.
+
+<i>Status</i> [out] uint
+The status of the operation. You can't access the status directly; instead, pass the status to the CheckAccessFullyMapped intrinsic function. CheckAccessFullyMapped returns TRUE if all values from the corresponding Sample, Gather, or Load operation accessed mapped tiles in a tiled resource. If any values were taken from an unmapped tile, CheckAccessFullyMapped returns FALSE.
+
+### Returns
+The return type matches the type in the declaration for the Texture2DMS object.
