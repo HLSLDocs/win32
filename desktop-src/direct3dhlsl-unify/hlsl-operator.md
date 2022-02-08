@@ -26,7 +26,7 @@ ElementType Texture3D<ElementType>::Operator[](
 
 | Parameter | Description |
 | - | - |
-| in [`<PosType> pos`](#uint-pos) | The index position. |
+| in [`<PosType> pos`](#postype-pos) | The index position. |
 
 Types that depend on texture object:
 
