@@ -1,6 +1,6 @@
 # Operator[]
 
-Reads texel data without any filtering or sampling.
+Reads texel data without any filtering or sampling in the first mip level.
 
 Method Signatures vary per supported TextureObject type:
 
@@ -26,7 +26,7 @@ ElementType Texture3D<ElementType>::Operator[](
 
 | Parameter | Description |
 | - | - |
-| in [`uint pos`](#uint-pos) | The index position. |
+| in [`<PosType> pos`](#uint-pos) | The index position. |
 
 Types that depend on texture object:
 
