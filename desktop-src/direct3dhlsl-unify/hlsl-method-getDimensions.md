@@ -3,23 +3,66 @@
 Gets texture size information.
 
 ```syntax
+// Texture1D
 void Texture1D<ElementType>::GetDimensions(
       in  uint  mipLevel,
       out uint  width,
       out uint  numberOfLevels );
 
-out Texture1DArray<ElementType>::GetDimensions(
+void Texture1D<ElementType>::GetDimensions(
+      out uint  width );
+
+void Texture1D<ElementType>::GetDimensions(
+      in  uint  mipLevel,
+      out float width,
+      out float numberOfLevels );
+
+void Texture1D<ElementType>::GetDimensions(
+      out float width );
+
+// Texture1DArray
+void Texture1DArray<ElementType>::GetDimensions(
       in  uint  mipLevel,
       out uint  width,
       out uint  elements,
       out uint  numberOfLevels );
 
+void Texture1DArray<ElementType>::GetDimensions(
+      out uint  width,
+      out uint  numberOfLevels );
+
+void Texture1DArray<ElementType>::GetDimensions(
+      in uint   mipLevel,
+      out float width,
+      out uint  elements,
+      out float numberOfLevels );
+
+void Texture1DArray<ElementType>::GetDimensions(
+      out float width,
+      out uint elements );
+
+// Texture2D
 void Texture2D<ElementType>::GetDimensions(
       in  uint  mipLevel,
       out uint  width,
       out uint  height,
       out uint  numberOfLevels );
 
+void Texture2D<ElementType>::GetDimensions(
+      out uint  width,
+      out uint  height );
+
+void Texture2D<ElementType>::GetDimensions(
+      in  uint  mipLevel,
+      out float width,
+      out float height,
+      out float numberOfLevels );
+
+void Texture2D<ElementType>::GetDimensions(
+      out float width,
+      out float height );
+
+// Texture2DArray
 void Texture2DArray<ElementType>::GetDimensions(
       in  uint  mipLevel,
       out uint  width,
@@ -27,12 +70,47 @@ void Texture2DArray<ElementType>::GetDimensions(
       out uint  elements,
       out uint  numberOfLevels );
 
+void Texture2DArray<ElementType>::GetDimensions(
+      out uint  width,
+      out float height,
+      out float elements );
+
+void Texture2DArray<ElementType>::GetDimensions(
+      in  uint   mipLevel,
+      out float  width,
+      out float  height,
+      out float  elements,
+      out float  numberOfLevels );
+
+void Texture2DArray<ElementType>::GetDimensions(
+      out float  width,
+      out float  height,
+      out float  elements );
+
+// Texture3D
 void Texture3D<ElementType>::GetDimensions(
       in  uint  mipLevel,
       out uint  width,
       out uint  height,
       out uint  depth,
       out uint  numberOfLevels );
+
+void Texture3D<ElementType>::GetDimensions(
+      out uint  width,
+      out uint  height,
+      out uint  depth );
+
+void Texture3D<ElementType>::GetDimensions(
+      in  uint  mipLevel,
+      out float width,
+      out float height,
+      out float depth,
+      out float numberOfLevels );
+
+void Texture3D<ElementType>::GetDimensions(
+      out float width,
+      out float height,
+      out float depth );
 
 void Texture2DMS<ElementType>::GetDimensions(
       out uint  width,
@@ -49,11 +127,11 @@ void Texture2DMSArray<ElementType>::GetDimensions(
 | Parameter | Description |
 | - | - |
 | in [`uint mipLevel`](#uint-mipLevel) | A zero-based index that identifies the mipmap level. If this argument is not used, the first mip level is assumed. |
-| out [`uint width`](#uint-width) | The texture width, in texels. |
-| out [`uint numberOfLevels`](#uint-numberOfLevels) | The number of mipmap levels. |
-| out [`uint elements`](#uint-elements) | The number of elements in an array. |
-| out [`uint height`](#uint-height) | The texture height, in texels. |
-| out [`uint depth`](#uint-depth) | The texture depth, in texels. |
+| out [`<UintFloat> width`](#uint-width) | The texture width, in texels. |
+| out [`<UintFloat> numberOfLevels`](#uint-numberOfLevels) | The number of mipmap levels. |
+| out [`<UintFloat> elements`](#uint-elements) | The number of elements in an array. |
+| out [`<UintFloat> height`](#uint-height) | The texture height, in texels. |
+| out [`<UintFloat> depth`](#uint-depth) | The texture depth, in texels. |
 | out [`uint numberOfSamples`](#uint-numberOfSamples) | The number of samples. |
 
 <b>Example</b>
@@ -72,25 +150,35 @@ None.
 
 A zero-based index that identifies the mipmap level. If this argument is not used, the first mip level is assumed.
 
-### `uint width`
+### `<UintFloat> width`
 
 The texture width, in texels.
 
-### `uint numberOfLevels`
+Can be uint or float.
+
+### `<UintFloat> numberOfLevels`
 
 The number of mipmap levels.
 
-### `uint elements`
+Can be uint or float.
+
+### `<UintFloat> elements`
 
 The number of elements in an array.
 
-### `uint height`
+Can be uint or float.
+
+### `<UintFloat> height`
 
 The texture height, in texels.
 
-### `uint depth`
+Can be uint or float.
+
+### `<UintFloat> depth`
 
 The texture depth, in texels.
+
+Can be uint or float.
 
 ### `uint numberOfSamples`
 
