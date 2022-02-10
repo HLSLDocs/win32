@@ -2,7 +2,7 @@
 
 Reads texel data without any filtering or sampling.
 
-Method Signatures vary per supported TextureObject type:
+Operator signatures vary per supported TextureObject type:
 
 ```syntax
 ElementType Texture1D<ElementType>::mips.Operator[][](
