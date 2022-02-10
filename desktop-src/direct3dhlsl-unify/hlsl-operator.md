@@ -2,7 +2,7 @@
 
 Reads texel data without any filtering or sampling in the first mip level.
 
-Method Signatures vary per supported TextureObject type:
+Operator signatures vary per supported TextureObject type:
 
 ```syntax
 ElementType Texture1D<ElementType>::Operator[](
@@ -67,7 +67,7 @@ Type: Depends on TextureObject.  Types and component meanings are defined in the
 
 ## Remarks
 
-This method always accesses the first mip level. To specify other mip levels, use the mip.operator[][] method instead.
+This operator always accesses the first mip level. To specify other mip levels, use the mip.operator[][] operator instead.
 The texture samples can be used for bilinear interpolation.
 
 ## Supported Shader Models
