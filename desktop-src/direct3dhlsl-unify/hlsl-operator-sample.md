@@ -2,7 +2,7 @@
 
 Retrieves a value from the resource at the location and sample index provided.
 
-Method Signatures vary per supported TextureObject type:
+Operator signatures vary per supported TextureObject type:
 
 ```syntax
 ElementType Texture2DMS<ElementType>::sample.Operator[][](
