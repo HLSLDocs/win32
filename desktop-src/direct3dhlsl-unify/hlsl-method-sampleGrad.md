@@ -80,7 +80,7 @@ ElementType TextureCubeArray<ElementType>::SampleGrad(
 Types that depend on texture object:
 
 | TextureObject | [`<CoordType>`](#coordtype-coord) | [`<DdxType>`](#ddxtype-ddx) | [`<DdyType>`](#ddytype-ddy) | [`<OffsetType>`](#offsettype-offset) |
-| --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | `Texture1D` | `float` | `float` | `float` | `int` |
 | `Texture1DArray` | `float2` | `float` | `float` | `int` |
 | `Texture2D` | `float2` | `float2` | `float2` | `int2` |
