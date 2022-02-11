@@ -1,16 +1,16 @@
-# HLSL Texture2D Object
+# HLSL Texture1D Object
 
-Object for accessing a read-only 2D texture shader resource view.  See [SRV Textures](hlsl-resource-objects.md#srv-textures).
+Object for accessing a read-only 1D texture shader resource view.  See [SRV Textures](hlsl-resource-objects.md#srv-textures).
 A template argument indicates the data type to use in HLSL for the texture element.
 Textures are typed resources, so a data conversion step will translate between the DXGI_FORMAT and the element type declared in HLSL.
 
 ```HLSL
 // prototype
-template<typename ElementType = float4> class Texture2D;
+template<typename ElementType = float4> class Texture1D;
 
 // example declarations:
-Texture2D ColorTexture;
-Texture2D<float> DepthTexture;
+Texture1D ColorTexture;
+Texture1D<float> DepthTexture;
 ```
 
 ## Methods
@@ -25,8 +25,6 @@ Texture2D<float> DepthTexture;
 | [SampleCmpLevelZero](#hlsl-method-sampleCmpLevelZero.md) | Samples a texture on mip level zero and returns the comparison against a provided value. |
 | [SampleGrad](#hlsl-method-sampleGrad.md) | Samples a texture using a gradient to influence the way the sample location is calculated. |
 | [SampleLevel](#hlsl-method-sampleLevel.md) | Samples a texture using a mipmap-level offset.  This function is similar to [Sample](#hlsl-method-sample.md) except that it uses the LOD level (in the last component of the location parameter) to choose the mipmap level. |
-| [Gather](hlsl-method-gather.md) | Gets the four samples that would be used for bilinear interpolation when sampling a texture. |
-| [GatherCmp](hlsl-method-gatherCmp.md) | Gather four samples of one component that would be used for bilinear filtering and return each comparison against a provided value. |
 
 ## Operators
 

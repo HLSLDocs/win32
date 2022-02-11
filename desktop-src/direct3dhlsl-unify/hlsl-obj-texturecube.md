@@ -1,16 +1,16 @@
-# HLSL Texture2D Object
+# HLSL TextureCube Object
 
-Object for accessing a read-only 2D texture shader resource view.  See [SRV Textures](hlsl-resource-objects.md#srv-textures).
+Object for accessing a read-only texture cube shader resource view.  See [SRV Textures](hlsl-resource-objects.md#srv-textures).
 A template argument indicates the data type to use in HLSL for the texture element.
 Textures are typed resources, so a data conversion step will translate between the DXGI_FORMAT and the element type declared in HLSL.
 
 ```HLSL
 // prototype
-template<typename ElementType = float4> class Texture2D;
+template<typename ElementType = float4> class TextureCube;
 
 // example declarations:
-Texture2D ColorTexture;
-Texture2D<float> DepthTexture;
+TextureCube ColorTexture;
+TextureCube<float> DepthTexture;
 ```
 
 ## Methods
