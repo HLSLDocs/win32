@@ -69,7 +69,7 @@ Types that depend on texture object:
 | `Texture1DArray` | `float2` | `int` |
 | `Texture2D` | `float2` | `int2` |
 | `Texture2DArray` | `float3` | `int2` |
-| `TextureCube` | `float2` | N/A |
+| `TextureCube` | `float3` | N/A |
 | `TextureCubeArray` | `float3` | N/A |
 
 <b>Example</b>
@@ -100,8 +100,8 @@ The texture coordinates.  The argument type is dependent on the texture-object t
 | `Texture1DArray` | `float2` | x | y |
 | `Texture2D` | `float2` | xy | - |
 | `Texture2DArray` | `float3` | xy | z |
-| `TextureCube` | `float2` | xy | - |
-| `TextureCubeArray` | `float3` | xy | z |
+| `TextureCube` | `float3` | xyz | - |
+| `TextureCubeArray` | `float4` | xyz | w |
 
 ### `float compareValue`
 
