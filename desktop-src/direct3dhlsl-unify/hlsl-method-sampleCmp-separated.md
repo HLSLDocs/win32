@@ -2,12 +2,14 @@
 
 Samples a texture and compares a single component against the specified comparison value.
 
+The hardware determines the mip level.
+
 Method Signatures vary per supported TextureObject type:
 
 ```syntax
 ElementType Texture1D<ElementType>::SampleCmp(
       in  SamplerComparisonState  samp,
-      in  float2                  coord,
+      in  float                   coord,
       in  float                   compareValue,
       in  int                     offset,
    [, in  float                   clamp ]
@@ -15,7 +17,7 @@ ElementType Texture1D<ElementType>::SampleCmp(
 
 ElementType Texture1DArray<ElementType>::SampleCmp(
       in  SamplerComparisonState  samp,
-      in  float3                  coord,
+      in  float2                  coord,
       in  float                   compareValue,
       in  int                     offset,
    [, in  float                   clamp ]
@@ -23,7 +25,7 @@ ElementType Texture1DArray<ElementType>::SampleCmp(
 
 ElementType Texture2D<ElementType>::SampleCmp(
       in  SamplerComparisonState  samp,
-      in  float3                  coord,
+      in  float2                  coord,
       in  float                   compareValue,
       in  int2                    offset,
    [, in  float                   clamp ]
@@ -31,7 +33,7 @@ ElementType Texture2D<ElementType>::SampleCmp(
 
 ElementType Texture2DArray<ElementType>::SampleCmp(
       in  SamplerComparisonState  samp,
-      in  float4                  coord,
+      in  float3                  coord,
       in  float                   compareValue,
       in  int2                    offset,
    [, in  float                   clamp ]
@@ -65,10 +67,10 @@ Types that depend on texture object:
 
 | TextureObject | [`<CoordType>`](#coordtype-coord) | [`<OffsetType>`](#offsettype-offset) |
 | --- | --- | --- |
-| `Texture1D` | `float2` | `int` |
-| `Texture1DArray` | `float3` | `int` |
-| `Texture2D` | `float3` | `int2` |
-| `Texture2DArray` | `float4` | `int2` |
+| `Texture1D` | `float` | `int` |
+| `Texture1DArray` | `float2` | `int` |
+| `Texture2D` | `float2` | `int2` |
+| `Texture2DArray` | `float3` | `int2` |
 | `TextureCube` | `float3` | N/A |
 | `TextureCubeArray` | `float4` | N/A |
 
@@ -94,14 +96,14 @@ A sampler-comparison state, which is the sampler state plus a comparison state (
 
 The texture coordinates.  The argument type is dependent on the texture-object type.
 
-| TextureObject | `<CoordType>` | x,y,z texel coord | Array Index | Mip Slice |
-| --------------- | ------------ | ------------ | ----------- | ----------- |
-| `Texture1D` | `float2` | x | - | y |
-| `Texture1DArray` | `float3` | x | y | z |
-| `Texture2D` | `float3` | xy | - | z |
-| `Texture2DArray` | `float4` | xy | z | w |
-| `TextureCube` | `float3` | xy | - | z |
-| `TextureCubeArray` | `float4` | xy | z | w |
+| TextureObject | `<CoordType>` | x,y,z texel coord | Array Index |
+| --------------- | ------------ | ------------ | ----------- |
+| `Texture1D` | `float` | x | - |
+| `Texture1DArray` | `float2` | x | y |
+| `Texture2D` | `float2` | xy | - |
+| `Texture2DArray` | `float3` | xy | z |
+| `TextureCube` | `float3` | xyz | - |
+| `TextureCubeArray` | `float4` | xyz | w |
 
 ### `float compareValue`
 
