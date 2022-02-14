@@ -17,9 +17,20 @@ Texture2D<float> DepthTexture;
 
 | Method | Description |
 | - | - |
-| [operators](hlsl-texture-operators.md) | Access texture elements using `operator[]` and `.mips[][]` syntax. |
-| [Load](hlsl-texture-load.md) | Load a texture element using an integer texel location. |
-| [Sample](hlsl-method-sample.md) | Samples a texture. |
-| [SampleCmp](hlsl-method-samplecmp.md) | Samples a texture and returns the comparison against a provided value. |
-| [Gather, GatherRed, GatherGreen, GatherBlue, GatherAlpha](hlsl-method-gather.md) | Gather four samples of one component that would be used for bilinear filtering when sampling a texture. |
-| [GatherCmp, GatherCmpRed, GatherCmpGreen, GatherCmpBlue, GatherCmpAlpha](hlsl-method-gathercmp.md) | Gather four samples of one component that would be used for bilinear filtering and return each comparison against a provided value. |
+| [GetDimensions](#hlsl-method-getDimensions) | Gets texture size information. |
+| [Load](#hlsl-method-load.md) | Reads texel data without any filtering or sampling. |
+| [Sample](#hlsl-method-sample.md) | Samples a texture. |
+| [SampleBias](#hlsl-method-sampleBias.md) | Samples a texture, after applying the bias value to the mipmap level. |
+| [SampleCmp](#hlsl-method-sampleCmp-separated.md) | Samples a texture and returns the comparison against a provided value. |
+| [SampleCmpLevelZero](#hlsl-method-sampleCmpLevelZero.md) | Samples a texture on mip level zero and returns the comparison against a provided value. |
+| [SampleGrad](#hlsl-method-sampleGrad.md) | Samples a texture using a gradient to influence the way the sample location is calculated. |
+| [SampleLevel](#hlsl-method-sampleLevel.md) | Samples a texture using a mipmap-level offset.  This function is similar to [Sample](#hlsl-method-sample.md) except that it uses the LOD level (in the last component of the location parameter) to choose the mipmap level. |
+| [Gather](hlsl-method-gather.md) | Gets the four samples that would be used for bilinear interpolation when sampling a texture. |
+| [GatherCmp](hlsl-method-gatherCmp.md) | Gather four samples of one component that would be used for bilinear filtering and return each comparison against a provided value. |
+
+## Operators
+
+| Operator | Description |
+| - | - |
+| [operator \[\]](#hlsl-operator.md) | Reads texel data without any filtering or sampling in the first mip level. |
+| [mips operator\[\[\]\]](#hlsl-operator-mips.md) | Reads texel data without any filtering or sampling. |
