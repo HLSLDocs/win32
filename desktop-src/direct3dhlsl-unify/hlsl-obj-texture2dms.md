@@ -19,6 +19,7 @@ Texture2DMS <float4, 128> MyMSTex;
 | - | - |
 | [GetDimensions](#hlsl-method-getDimensions) | Gets texture size information. |
 | [Load](#hlsl-method-load.md) | Reads texel data without any filtering or sampling. |
+| [GetSamplePosition](#hlsl-method-getSamplePosition) | Gets the position of the specified sample. |
 
 ## Operators
 
