@@ -17,13 +17,13 @@ Texture2DMSArray <float4, 128> MyMSTex;
 
 | Method | Description |
 | - | - |
-| [GetDimensions](#hlsl-method-getDimensions.md) | Gets texture size information. |
-| [Load](#hlsl-method-load.md) | Reads texel data without any filtering or sampling. |
-| [GetSamplePosition](#hlsl-method-getSamplePosition.md) | Gets the position of the specified sample. |
+| [GetDimensions](hlsl-method-getDimensions.md) | Gets texture size information. |
+| [Load](hlsl-method-load.md) | Reads texel data without any filtering or sampling. |
+| [GetSamplePosition](hlsl-method-getSamplePosition.md) | Gets the position of the specified sample. |
 
 ## Operators
 
 | Operator | Description |
 | - | - |
-| [operator\[\]](#hlsl-operator) | Reads texel data without any filtering or sampling in the first mip level. |
-| [sample operator\[\]\[\]](#hlsl-operator-sample.md) | Reads texel data without any filtering or sampling. |
+| [operator\[\]](hlsl-operator) | Reads texel data without any filtering or sampling in the first mip level. |
+| [sample operator\[\]\[\]](hlsl-operator-sample.md) | Reads texel data without any filtering or sampling. |
