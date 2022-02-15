@@ -30,5 +30,5 @@ Texture3D<float> DepthTexture;
 
 | Operator | Description |
 | - | - |
-| [operator \[\]](#hlsl-operator.md) | Reads texel data without any filtering or sampling in the first mip level. |
-| [mips operator /[ /] /[ /]](#hlsl-operator-mips.md) | Reads texel data without any filtering or sampling. |
+| [operator\[\]](#hlsl-operator.md) | Reads texel data without any filtering or sampling in the first mip level. |
+| [mips operator\[\]\[\]](#hlsl-operator-mips.md) | Reads texel data without any filtering or sampling. |
