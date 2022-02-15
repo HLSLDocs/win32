@@ -27,10 +27,3 @@ TextureCubeArray<float> DepthTexture;
 | [SampleLevel](#hlsl-method-sampleLevel.md) | Samples a texture using a mipmap-level offset.  This function is similar to [Sample](#hlsl-method-sample.md) except that it uses the LOD level (in the last component of the location parameter) to choose the mipmap level. |
 | [Gather](hlsl-method-gather.md) | Gets the four samples that would be used for bilinear interpolation when sampling a texture. |
 | [GatherCmp](hlsl-method-gatherCmp.md) | Gather four samples of one component that would be used for bilinear filtering and return each comparison against a provided value. |
-
-## Operators
-
-| Operator | Description |
-| - | - |
-| [operator \[\]](#hlsl-operator.md) | Reads texel data without any filtering or sampling in the first mip level. |
-| [mips operator/[/]/[/]](#hlsl-operator-mips.md) | Reads texel data without any filtering or sampling. |

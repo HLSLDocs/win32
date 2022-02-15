@@ -25,5 +25,5 @@ Texture2DMS <float4, 128> MyMSTex;
 
 | Operator | Description |
 | - | - |
-| [operator \[\]](#hlsl-operator) | Reads texel data without any filtering or sampling in the first mip level. |
-| [sample operator/[/]/[/]](#hlsl-operator-sample.md) | Reads texel data without any filtering or sampling. |
+| [operator \[ \]](#hlsl-operator) | Reads texel data without any filtering or sampling in the first mip level. |
+| [sample operator /[ /] /[ /]](#hlsl-operator-sample.md) | Reads texel data without any filtering or sampling. |
