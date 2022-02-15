@@ -17,7 +17,7 @@ TextureCubeArray<float> DepthTexture;
 
 | Method | Description |
 | - | - |
-| [GetDimensions](#hlsl-method-getDimensions) | Gets texture size information. |
+| [GetDimensions](#hlsl-method-getDimensions.md) | Gets texture size information. |
 | [Load](#hlsl-method-load.md) | Reads texel data without any filtering or sampling. |
 | [Sample](#hlsl-method-sample.md) | Samples a texture. |
 | [SampleBias](#hlsl-method-sampleBias.md) | Samples a texture, after applying the bias value to the mipmap level. |
@@ -33,4 +33,4 @@ TextureCubeArray<float> DepthTexture;
 | Operator | Description |
 | - | - |
 | [operator \[\]](#hlsl-operator.md) | Reads texel data without any filtering or sampling in the first mip level. |
-| [mips operator\[\[\]\]](#hlsl-operator-mips.md) | Reads texel data without any filtering or sampling. |
+| [mips operator/[/]/[/]](#hlsl-operator-mips.md) | Reads texel data without any filtering or sampling. |
