@@ -124,6 +124,68 @@ void Texture2DMSArray<ElementType>::GetDimensions(
       out uint  height,
       out uint  elements,
       out uint  numberOfSamples );
+
+// Buffer
+void Buffer::GetDimensions(
+      out uint dim );
+
+// ByteAddressBuffer
+void Buffer::GetDimensions(
+      out uint dim );
+
+// StructuredBuffer
+void StructuredBuffer<ElementType>::GetDimensions(
+      out uint numStructs,
+      out uint stride );
+
+// RWTexture1D
+void RWTexture1D<ElementType>::GetDimensions(
+      out uint width );
+
+// RWTexture1DArray
+void RWTexture1DArray<ElementType>::GetDimensions(
+      out uint width,
+      out uint elements );
+
+// RWTexture2D
+void RWTexture2D<ElementType>::GetDimensions(
+      out uint width,
+      out uint height );
+
+// RWTexture2DArray
+void RWTexture2DArray<ElementType>::GetDimensions(
+      out uint width,
+      out uint height,
+      out uint elements );
+
+// RWTexture3D
+void RWTexture3D<ElementType>::GetDimensions(
+      out uint width,
+      out uint height,
+      out uint depth );
+
+// RWBuffer
+void RWBuffer::GetDimensions(
+      out uint dim );
+
+// RWByteAddressBuffer
+void RWByteAddressBuffer::GetDimensions(
+      out uint dim );
+
+// RWStructuredBuffer
+void RWStructuredBuffer<ElementType>::GetDimensions(
+      out uint numStructs,
+      out uint stride );
+
+// AppendStructuredBuffer
+void AppendStructuredBuffer<ElementType>::GetDimensions(
+      out uint numStructs,
+      out uint stride );
+
+// ConsumeStructuredBuffer
+void ConsumeStructuredBuffer<ElementType>::GetDimensions(
+      out uint numStructs,
+      out uint stride );
 ```
 
 | Parameter | Description |
@@ -135,6 +197,9 @@ void Texture2DMSArray<ElementType>::GetDimensions(
 | out [`<UintFloat> height`](#uint-height) | The texture height, in texels. |
 | out [`<UintFloat> depth`](#uint-depth) | The texture depth, in texels. |
 | out [`uint numberOfSamples`](#uint-numberOfSamples) | The number of samples. |
+| out [`uint dim`](#uint-dim) | The length, in bytes, of the buffer. |
+| out [`uint numStructs`](#uint-numStructs) | The number of structures in the resource. |
+| out [`uint stride`](#uint-stride) | The stride, in bytes, of each structure element. |
 
 <b>Example</b>
 
@@ -185,6 +250,18 @@ Can be uint or float.
 ### `uint numberOfSamples`
 
 The number of samples.
+
+### `uint dim`
+
+The length, in bytes, of the buffer.
+
+### `uint numStructs`
+
+The number of structures in the resource.
+
+### `uint stride`
+
+The stride, in bytes, of each structure element.
 
 ## Remarks
 

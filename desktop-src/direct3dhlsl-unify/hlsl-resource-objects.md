@@ -1,14 +1,14 @@
 # HLSL Resource Objects
 
-HLSL Resource objects in are used in HLSL to access resource views or samplers in D3D.  They may be bound through a root signature, or dynamically created by indexing descriptor heaps.  A "resource" from the perspective of HLSL is defined differently than the meaning used in the D3D API.
+HLSL Resource objects in are used in HLSL to access resource views or samplers in D3D. They may be bound through a root signature, or dynamically created by indexing descriptor heaps. A "resource" from the perspective of HLSL is defined differently than the meaning used in the D3D API.
 
 There are four resource classes:
 
-| Abbrev. | binding | Resource Class | Description |
+| Abbrev. | binding | Object Class | Description |
 | - | - | - | - |
-| [SRV](#srv-objects) | t | Shader Resource View | Read-only view into resource data |
+| [SRV](#srv-textures) | t | Shader Resource View | Read-only view into resource data |
 | [UAV](#uav-objects) | u | Unordered Access View | Read/Write view into resource data |
-| [CBV](#cbv-objects) | b | Constant Buffer View | Read-only view into constant buffer data |
+| [CBV](#cbv-constant-buffer) | b | Constant Buffer View | Read-only view into constant buffer data |
 | [Sampler](#sampler-objects) | s | Sampler | SamplerState or SamplerCmpState descriptor |
 
 For each Resource Class, there are a number of specific object types, some of which can be grouped into some high level categories:
@@ -48,11 +48,11 @@ Texture2DMS <float4, 8> MyMSTex;
 | [StructuredBuffer](hlsl-obj-structuredbuffer.md) | read-only structured buffer |
 | [TextureBuffer](hlsl-obj-texturebuffer.md) | object for reading data in constant buffer layout from a typed buffer |
 
-### SRV Other
+### SRV Raytracing
 
 | Object | Description |
 | - | - |
-| [RTAccelerationStructure](hlsl-obj-rtaccelerationstructure.md) | Acceleration structure object used for Raytracing (see: TraceRay) |
+| [RaytracingAccelerationStructure](hlsl-obj-rtaccelerationstructure.md) | Acceleration structure object used for Raytracing (see: TraceRay) |
 
 ## UAV Objects
 
@@ -75,13 +75,21 @@ UAV textures are read/write views into texture resources.  The supported formats
 | [RWBuffer](hlsl-obj-rwbuffer.md) | read/write typed buffer |
 | [RWByteAddressBuffer](hlsl-obj-rwbyteaddressbuffer.md) | read/write raw byte buffer |
 | [RWStructuredBuffer](hlsl-obj-rwstructuredbuffer.md) | read/write structured buffer (accessed as an array of structs) |
+| [AppendStructuredBuffer](hlsl-obj-appendstructuredbuffer.md) | templated output buffer (accessed as a stream) |
+| [ConsumeStructuredBuffer](hlsl-obj-consumestructuredbuffer.md) | templated input buffer (accessed as a stream) |
 
-### UAV Other
+### UAV Sampler Feedback
 
 | Object | Description |
 | - | - |
 | [FeedbackTexture2D](hlsl-obj-feedbacktexture2d.md) | resource for writing sampler feedback for a `Texture2D` |
 | [FeedbackTexture2DArray](hlsl-obj-feedbacktexture2darray.md) | resource for writing sampler feedback for a `Texture2DArray` |
+
+### CBV Constant Buffer
+
+| Object | Description |
+| - | - |
+| [ConstantBuffer](hlsl-obj-constantbuffer.md) | object as a binding buffer from C++ |
 
 ## Sampler Objects
 
