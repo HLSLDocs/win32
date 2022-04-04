@@ -8,7 +8,7 @@ There are four resource classes:
 | - | - | - | - |
 | [SRV](#srv-textures) | t | Shader Resource View | Read-only view into resource data |
 | [UAV](#uav-objects) | u | Unordered Access View | Read/Write view into resource data |
-| [CBV](#cbv-objects) | b | Constant Buffer View | Read-only view into constant buffer data |
+| [CBV](#cbv-constant-buffer) | b | Constant Buffer View | Read-only view into constant buffer data |
 | [Sampler](#sampler-objects) | s | Sampler | SamplerState or SamplerCmpState descriptor |
 
 For each Resource Class, there are a number of specific object types, some of which can be grouped into some high level categories:
