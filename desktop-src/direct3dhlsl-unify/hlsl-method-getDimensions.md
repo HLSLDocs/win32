@@ -112,11 +112,13 @@ void Texture3D<ElementType>::GetDimensions(
       out float height,
       out float depth );
 
+// Texture2DMS
 void Texture2DMS<ElementType>::GetDimensions(
       out uint  width,
       out uint  height,
       out uint  numberOfSamples );
 
+// Texture2DMSArray
 void Texture2DMSArray<ElementType>::GetDimensions(
       out uint  width,
       out uint  height,
