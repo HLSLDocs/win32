@@ -191,11 +191,11 @@ void ConsumeStructuredBuffer<ElementType>::GetDimensions(
 | Parameter | Description |
 | - | - |
 | in [`uint mipLevel`](#uint-mipLevel) | A zero-based index that identifies the mipmap level. If this argument is not used, the first mip level is assumed. |
-| out [`<UintFloat> width`](#uint-width) | The texture width, in texels. |
-| out [`<UintFloat> numberOfLevels`](#uint-numberOfLevels) | The number of mipmap levels. |
-| out [`<UintFloat> elements`](#uint-elements) | The number of elements in an array. |
-| out [`<UintFloat> height`](#uint-height) | The texture height, in texels. |
-| out [`<UintFloat> depth`](#uint-depth) | The texture depth, in texels. |
+| out [`<UintFloat> width`](#uintfloat-width) | The texture width, in texels. |
+| out [`<UintFloat> numberOfLevels`](#uintfloat-numberOfLevels) | The number of mipmap levels. |
+| out [`<UintFloat> elements`](#uintfloat-elements) | The number of elements in an array. |
+| out [`<UintFloat> height`](#uintfloat-height) | The texture height, in texels. |
+| out [`<UintFloat> depth`](#uintfloat-depth) | The texture depth, in texels. |
 | out [`uint numberOfSamples`](#uint-numberOfSamples) | The number of samples. |
 | out [`uint dim`](#uint-dim) | The length, in bytes, of the buffer. |
 | out [`uint numStructs`](#uint-numStructs) | The number of structures in the resource. |
