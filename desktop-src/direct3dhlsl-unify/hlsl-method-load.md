@@ -1,4 +1,4 @@
-# Load Method
+# Load Method (Texture)
 
 Reads texel data without any filtering or sampling.
 
@@ -41,6 +41,26 @@ ElementType Texture3D<ElementType>::Load(
       in  int4          location,
       in  int3          offset
    [, out uint          status ] );
+
+ElementType RWTexture1D<ElementType>::Load(
+      in  int           location,
+   [, out uint          status] );
+
+ElementType RWTexture1DArray<ElementType>::Load(
+      in  int2          location,
+   [, out uint          status] );
+
+ElementType RWTexture2D<ElementType>::Load(
+      in  int2          location,
+   [, out uint          status] );
+
+ElementType RWTexture2DArray<ElementType>::Load(
+      in  int3          location,
+   [, out uint          status] );
+
+ElementType RWTexture3D<ElementType>::Load(
+      in  int3          location,
+   [, out uint          status] );
 ```
 
 | Parameter | Description |
@@ -61,6 +81,11 @@ Types that depend on texture object:
 | `Texture2DMS` | `int2` | `int2` |
 | `Texture2DMSArray` | `int2` | `int2` |
 | `Texture3D` | `int4` | `int3` |
+| `RWTexture1D` | `int` | - |
+| `RWTexture1DArray` | `int2` | - |
+| `RWTexture2D` | `int2` | - |
+| `RWTexture2DArray` | `int3` | - |
+| `RWTexture3D` | `int3` | - |
 
 <b>Example</b>
 
@@ -103,10 +128,17 @@ The texture coordinates; the last component specifies the mipmap level. This met
 | `Texture2DMS` | `int2` | xy | - | - |
 | `Texture2DMSArray` | `int3` | xy | z | - |
 | `Texture3D` | `int4` | xyz | - | z |
+| `RWTexture1D` | `int` | x | - | - |
+| `RWTexture1DArray` | `int2` | x | y | - |
+| `RWTexture2D` | `int2` | xy | - | - |
+| `RWTexture2DArray` | `int3` | xy | z | - |
+| `RWTexture3D` | `int3` | xyz | - | - |
 
 ### `<OffsetType> offset`
 
 An optional texture coordinate offset, which can be used for any texture-object type; the offset is applied to the location before sampling. The texture offsets need to be static. The argument type is dependent on the texture-object type. For more info, see Applying texture coordinate offsets.
+
+RW Texture Objects do not include offset parameters.
 
 > My alternate text:
 > An integral offset in texels from the sampling location in the texture.
