@@ -2,6 +2,8 @@
 
 Reads texel data without any filtering or sampling in the first mip level.
 
+RW objects can write texel data to the texture object.
+
 Operator signatures vary per supported TextureObject type:
 
 ```syntax
@@ -22,6 +24,22 @@ ElementType Texture2DMS<ElementType>::Operator[](
 
 ElementType Texture3D<ElementType>::Operator[](
       in uint3 pos );
+
+// RW values allow for reading and writing through the Operator[]
+ElementType RWTexture1D<ElementType>::Operator[](
+      in uint pos );
+
+ElementType RWTexture1DArray<ElementType>::Operator[](
+      in uint2 pos );
+
+ElementType RWTexture2D<ElementType>::Operator[](
+      in uint2 pos );
+
+ElementType RWTexture2DArray<ElementType>::Operator[](
+      in uint3 pos );
+
+ElementType RWTexture3D<ElementType>::Operator[](
+      in uint3 pos );
 ```
 
 | Parameter | Description |
@@ -38,6 +56,11 @@ Types that depend on texture object:
 | `Texture2DArray` | `int3` |
 | `Texture2DMS` | `int2` |
 | `Texture3D` | `int3` |
+| `RWTexture1D` | `int` |
+| `RWTexture1DArray` | `int2` |
+| `RWTexture2D` | `int2` |
+| `RWTexture2DArray` | `int3` |
+| `RWTexture3D` | `int3` |
 
 <b>Example</b>
 
@@ -64,11 +87,15 @@ Type: Depends on TextureObject.  Types and component meanings are defined in the
 | `Texture2D` | `int2` | xy | - |
 | `Texture2DArray` | `int3` | xy | z |
 | `Texture3D` | `int3` | xyz | - |
+| `RWTexture1D` | `int` | x | - |
+| `RWTexture1DArray` | `int2` | x | y |
+| `RWTexture2D` | `int2` | xy | - |
+| `RWTexture2DArray` | `int3` | xy | z |
+| `RWTexture3D` | `int3` | xyz | - |
 
 ## Remarks
 
-This operator always accesses the first mip level. To specify other mip levels, use the mip.operator[][] operator instead.
-The texture samples can be used for bilinear interpolation.
+This operator always accesses the first mip level. To specify other mip levels, use the mip.operator[][] operator instead.  RW texture objects do not support the mip.operator[][] operator. The texture samples can be used for bilinear interpolation.
 
 ## Supported Shader Models
 
