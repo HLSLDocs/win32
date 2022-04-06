@@ -78,9 +78,9 @@ ElementType RWStructuredBuffer<ElementType>::Load(
 
 The method mostly returns `uint` values.  The dimensionality of the return value depends on the method signature.
 
-The buffer object `StructuredBuffer` returns a mandatory templated value.
+The buffer objects `StructuredBuffer` and `RWStructuredBuffer` return a mandatory templated value.
 
-The buffer object `BytreAddressBuffer` returns an optional templated value.
+The buffer objects `ByteAddressBuffer` and `RWByteAddressBuffer` return an optional templated value.
 
 | Buffer Object | Method Signature | Return Type |
 | - | - | - |
