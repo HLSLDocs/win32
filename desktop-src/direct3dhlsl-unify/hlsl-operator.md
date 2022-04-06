@@ -1,4 +1,4 @@
-# Operator[]
+# Operator[] (Texture)
 
 Reads texel data without any filtering or sampling in the first mip level.
 
