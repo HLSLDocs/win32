@@ -17,4 +17,4 @@ StructuredBuffer<MyStruct> mySB;
 
 | Operator | Description |
 | - | - |
-| [operator\[\]](hlsl-operator.md) | Reads value from buffer. |
+| [operator\[\]](hlsl-operator_buffer.md) | Reads value from buffer. |
