@@ -8,7 +8,7 @@ A template argument indicates the data type to use in HLSL for the texture eleme
 
 Because a `RWTexture1D` object is a UAV-type object, its properties differ from a shader resource view (SRV)-type object, such as a [`Texture1D`](hlsl-obj-texture1d.md) object. For example, you can read from and write to a `RWTexture1D` object, but you can only read from a [`Texture1D`](hlsl-obj-texture1d.md) object.
 
-A RWTexture1D object cannot use methods from a [`Texture1D`](hlsl-obj-texture1d.md) object, such as Sample. However, because you can create multiple view types to the same resource, you can declare multiple texture types as a single texture in multiple shaders. For example, you can declare and use a `RWTexture1D` object as tex in a compute shader and then declare and use a [`Texture1D`](hlsl-obj-texture1d.md) object as tex in a pixel shader.
+A `RWTexture1D` object cannot use methods from a [`Texture1D`](hlsl-obj-texture1d.md) object, such as [`Sample`](hlsl-method-sample.md). However, because you can create multiple view types to the same resource, you can declare multiple texture types as a single texture in multiple shaders. For example, you can declare and use a `RWTexture1D` object as tex in a compute shader and then declare and use a [`Texture1D`](hlsl-obj-texture1d.md) object as tex in a pixel shader.
 
 >**Note:** The runtime enforces certain usage patterns when you create multiple view types to the same resource. For example, the runtime does not allow you to have both a UAV mapping for a resource and SRV mapping for the same resource active at the same time.
 
