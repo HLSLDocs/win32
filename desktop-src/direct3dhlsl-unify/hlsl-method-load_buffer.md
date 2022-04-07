@@ -71,7 +71,7 @@ ElementType RWStructuredBuffer<ElementType>::Load(
 | Parameter | Description |
 | - | - |
 | in [`uint address`](#uint-address) | The input address. |
-| out [`uint status`](#uint-status) | The status of the operation. You can't access the status directly; instead, pass the status to the CheckAccessFullyMapped intrinsic function. CheckAccessFullyMapped returns TRUE if all values from the corresponding Sample, Gather, or Load operation accessed mapped tiles in a tiled resource. If any values were taken from an unmapped tile, CheckAccessFullyMapped returns FALSE. |
+| out [`uint status`](#uint-status) | The status of the operation. You can't access the status directly; instead, pass the status to the CheckAccessFullyMapped intrinsic function. CheckAccessFullyMapped returns TRUE if all values from the corresponding Sample, Gather, or Load operation accessed mapped tiles in a tiled resource. If any values were taken from an unmapped tile, CheckAccessFullyMapped returns FALSE. |,.............................
 
 <b>Example</b>
 
