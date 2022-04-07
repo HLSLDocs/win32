@@ -32,9 +32,9 @@ ElementType RWStructuredBuffer<ElementType>::Operator[](
 
 ## Return Value
 
-The `Buffer` and `RWBuffer` objects returns `uint` values.  The dimensionality of the return value depends on the method signature.
+The `Buffer` and `RWBuffer` objects return `uint` values.  The dimensionality of the return value depends on the method signature.
 
-The buffer objects `StructuredBuffer` and `RWStructuredBuffer` returns a mandatory templated value.
+The buffer objects `StructuredBuffer` and `RWStructuredBuffer` return a mandatory templated value.
 
 ## Parameters
 
