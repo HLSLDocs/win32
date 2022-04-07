@@ -20,6 +20,10 @@ ElementType RWStructuredBuffer<ElementType>::Operator[](
     in uint pos );
 ```
 
+| Parameter | Description |
+| - | - |
+| in [`uint pos`](#uint-pos) | The index position. |
+
 <b>Example</b>
 
 ```HLSL
@@ -36,7 +40,7 @@ The buffer objects `StructuredBuffer` and `RWStructuredBuffer` returns a mandato
 
 ### `uint pos`
 
- The index position.
+The index position.
 
 ## Remarks
 
