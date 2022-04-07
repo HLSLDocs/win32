@@ -1,8 +1,8 @@
-# HLSL Resource Objects
+# HLSL Objects
 
-HLSL Resource objects in are used in HLSL to access resource views or samplers in D3D. They may be bound through a root signature, or dynamically created by indexing descriptor heaps. A "resource" from the perspective of HLSL is defined differently than the meaning used in the D3D API.
+HLSL objects in are used in HLSL to access resource objects or samplers in D3D. They may be bound through a root signature, or dynamically created by indexing descriptor heaps. A "resource" from the perspective of HLSL is defined differently than the meaning used in the D3D API.
 
-There are four resource classes:
+There are four object classes:
 
 | Abbrev. | binding | Object Class | Description |
 | - | - | - | - |
@@ -11,7 +11,7 @@ There are four resource classes:
 | [CBV](#cbv-constant-buffer) | b | Constant Buffer View | Read-only view into constant buffer data |
 | [Sampler](#sampler-objects) | s | Sampler | SamplerState or SamplerCmpState descriptor |
 
-For each Resource Class, there are a number of specific object types, some of which can be grouped into some high level categories:
+For each class, there are a number of specific object types, some of which can be grouped into some high level categories:
 
 ## SRV Objects
 
