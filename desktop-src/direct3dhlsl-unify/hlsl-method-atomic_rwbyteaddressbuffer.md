@@ -1,4 +1,4 @@
-# Atomic Arithetic and Logic Methods (RWByteAddressBuffer) 
+# Atomic Methods (RWByteAddressBuffer) 
 
 ## InterlockedAdd
 
@@ -20,6 +20,31 @@ void InterlockedAnd(
     in  uint    dest,
     in  uint    value,
     out uint    original_value );
+```
+
+## InterlockedCompareExchange
+
+Compares the input to the comparison value and exchanges the result, atomically.
+
+Atomically compares the value in dest to compare_value, stores value in dest if the values match, returns the original value of dest in original_value.
+
+```syntax
+void InterlockedCompareExchange(
+    in  uint    dest,
+    in  uint    compare_value,
+    in  uint    value,
+    out uint    original_value );
+```
+
+## InterlockedCompareStore
+
+Compares the input to the comparison value, atomically.
+
+```syntax
+void InterlockedCompareStore(
+    in  uint    dest,
+    in  uint    compare_value,
+    in  uint    value );
 ```
 
 ## InterlockedExchange
@@ -80,6 +105,7 @@ void InterlockedXor(
 | Parameter | Description |
 | - | - |
 | in [`uint dest`](#uint-dest) | The destination address. |
+| in [`uint compare_value`](#uint-compare_value) | The comparison value. |
 | in [`uint value`](#uint-value) | The input value. |
 | out [`uint original_value`](#uint-original_value) | The original value. |
 
@@ -92,6 +118,10 @@ None.
 ### `uint dest`
 
 The destination address.
+
+### `uint compare_value`
+
+The comparison value.
 
 ### `uint value`
 
