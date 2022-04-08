@@ -109,6 +109,12 @@ void InterlockedXor(
 | in [`uint value`](#uint-value) | The input value. |
 | out [`uint original_value`](#uint-original_value) | The original value. |
 
+<b>Example</b>
+
+```HLSL
+// None.
+```
+
 ## Return Value
 
 None.
