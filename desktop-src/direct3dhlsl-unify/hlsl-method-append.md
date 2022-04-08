@@ -26,6 +26,8 @@ None.
 
 The input value.
 
+The parameter type matches the type in the Object declaration. For example, a Texture2D object that was declared as "Texture2d<uint4> myTexture;" has a parameter value of type uint4.
+
 ## Return Value
 
 None.
