@@ -27,4 +27,4 @@ RWTexture1D<float> tex;
 
 | Operator | Description |
 | - | - |
-| [operator\[\]](hlsl-operator.md) | Reads value from buffer. |
+| [operator\[\]](hlsl-operator.md) | Reads value from texture. |
