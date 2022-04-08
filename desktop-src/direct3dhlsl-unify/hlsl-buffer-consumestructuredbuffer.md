@@ -6,7 +6,7 @@ The UAV format bound to this resource needs to be created with the `DXGI_FORMAT_
 
 The UAV bound to this resource must have been created with `D3D11_BUFFER_UAV_FLAG_APPEND`.
 
-For more information about an append structured buffer, see both sections: [`append and consume`](https://docs.microsoft.com/en-us/windows/desktop/direct3d11/direct3d-11-advanced-stages-cs-resources) buffer and [`structured buffer`](https://docs.microsoft.com/en-us/windows/desktop/direct3d11/direct3d-11-advanced-stages-cs-resources).
+For more information about an consume structured buffer, see both sections: [`append and consume`](https://docs.microsoft.com/en-us/windows/desktop/direct3d11/direct3d-11-advanced-stages-cs-resources) buffer and [`structured buffer`](https://docs.microsoft.com/en-us/windows/desktop/direct3d11/direct3d-11-advanced-stages-cs-resources).
 
 ```HLSL
 // None.
