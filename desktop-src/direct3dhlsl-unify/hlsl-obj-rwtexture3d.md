@@ -1,6 +1,6 @@
 # HLSL RWTexture3D
 
-Object for accessing a read-write 1D texture unordered access view.
+Object for accessing a read-write 3D texture unordered access view.
 
 You can prefix `RWTexture3D` objects with the storage class `globallycoherent`. This storage class causes memory barriers and syncs to flush data across the entire GPU such that other groups can see writes. Without this specifier, a memory barrier or sync will flush a UAV only within the current group.
 
@@ -27,4 +27,4 @@ RWTexture3D<float> tex;
 
 | Operator | Description |
 | - | - |
-| [operator\[\]](hlsl-operator.md) | Reads value from buffer. |
+| [operator\[\]](hlsl-operator.md) | Reads value from texture. |
