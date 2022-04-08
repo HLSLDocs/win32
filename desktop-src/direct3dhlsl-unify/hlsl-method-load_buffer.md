@@ -1,6 +1,6 @@
 # Load Method (Buffer)
 
-Gets one or more values from read-only buffer.
+Gets one or more values from a buffer.
 
 Method Signatures vary per supported buffer object type:
 
