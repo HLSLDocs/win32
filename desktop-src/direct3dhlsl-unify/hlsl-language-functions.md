@@ -280,3 +280,14 @@ Struct PSInFails
 ```
 
 PSInWorks is a compatible subset of VSOut (the first two entries match both type and order with the first two entries in VSOut). However, PSInFails is incompatible because the ordering does not match with VSOut.
+
+## Template functions
+
+Functions can be defined with generic type arguments provided those types support all the methods and operators used in the function. The effect is to define a function that is instantiated with type variants for each of the calls that use that type. The syntax involves specifying the templated types using the `template` keyword with parameters indicating the types within `<>` braces after it:
+
+```c++
+template <class Position, class Color>
+Color BlendedSample(Position pos, Color col) {
+  return g_tex.Sample(g_samp, pos)*col;
+}
+```
