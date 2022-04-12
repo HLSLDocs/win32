@@ -303,6 +303,35 @@ Boolean operators function on a per-component basis. This means that if you comp
 
 For expressions that use Boolean operators, the size and component type of each variable are promoted to be the same before the operation occurs. The promoted type determines the resolution at which the operation takes place, as well as the result type of the expression. For example an int3 + float expression would be promoted to float3 + float3 for evaluation, and its result would be of type float3.
 
+#### Logical operation short-circuiting for scalars
+
+Another potentially backward incompatible change is to the behavior of binary logic operators. Previously, HLSL did not support short circuiting behavior for vector types because each component of the vector might have a different result. Sometimes short circuiting behavior was expected and performance impacts were the result of executing a potentially unnecessary function call.
+
+In HLSL 2021, the usual binary logic operators can only be used with scalars. These scalar operations will exhibit expected short circuiting behavior. If the first operand of `&&` is false, the second will not be evaluated. If the first operand of `||` is true, the second will not be evaluated. The evaluation of the second and third operands of `?:` will be determined by the value of the first.
+
+If vector operands are used with binary logical operators, the compiler will produce an error. To maintain the previous behavior where it is wanted, new `and()`, `or()`, and `select()` intrinsics are introduced corresponding to `&&`, `||`, and `?:` operators.
+
+Where existing shaders make use of binary logic operators on vector operands, the author may choose to replace the conditionals with scalar values to leverage the short circuit improvements, or switch to the new intrinsics to maintain the previous behavior.
+
+
+For example this code will need to be updated:
+
+```c++
+  doit = vec && (ShouldIDoIt(vec) || !ShouldINotDoIt(vec));
+```
+
+If the boolean vector is needed, short circuiting may not be appropriate as every channel needs to be evaluated and assigned so the new `and()` and `or()` intrinsics should be used:
+
+```c++
+  doit = and(vec, or(ShouldIDoIt(vec), !ShouldINotDoIt(vec)));
+```
+
+If a scalar evaluation is sufficient, then use of `any()` or possibly a single element of a vector is appropriate:
+
+```c++
+  doit = vec.x && (any(ShouldIDoIt(vec)) || any(!ShouldINotDoIt(vec)));
+```
+
 ### Cast Operator
 
 An expression preceded by a type name in parenthesis is an explicit type cast. A type cast converts the original expression to the data type of the cast. In general, the simple data types can be cast to the more complex data types (with a promotion cast), but only some complex data types can be cast into simple data types (with a demotion cast).
@@ -528,6 +557,48 @@ int j = +i2;       // j = +2
 ### Operator Precedence
 
 When an expression contains more than one operator, operator precedence determines the order of evaluation. Operator precedence for HLSL follows the same precedence as C.
+
+### Operator overloading
+
+To allow a broader use of templates and allow creation of types that might mimic the behavior of more familiar programming environments, operators can be defined for user-defined structs that allow those structs to be applied to existing operators just as native types can:
+
+```hlsl
+struct MyArray {
+  float4 A[MAX_SIZE];
+  
+  void splat(float f) {
+    for (int i = 0; i < MAX_SIZE; i++)
+      A[i] = f;
+  };
+
+  float4 operator[](int ix) {
+    if (ix >= MAX_SIZE)
+      return 0.0;
+    return A[ix];
+  };
+
+  MyArray operator+(MyArray RHS) {
+    MyArray OutArray;
+    for (int i = 0; i < MAX_SIZE; i++)
+      OutArray.A[i] = A[i] + RHS.A[i];
+    return OutArray;
+  };
+
+  void operator=(MyArray RHS) {
+    for (int i = 0; i < MAX_SIZE; i++)
+      A[i] = A[i] + RHS.A[i];
+  };
+};
+
+
+float4 main(float4 col1: COLOR0, float4 col2: COLOR2, int ix : I) : SV_Target {
+  MyArray A, B;
+  A.splat(col1);
+  B.splat(col2);
+  A = A + B;
+  return A[ix];
+}
+```
 
 ### Remarks
 
