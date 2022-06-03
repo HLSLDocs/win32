@@ -1,0 +1,3 @@
+# Variables
+
+HLSL variables are similar to variables defined in the C programming language. Similar to C, variables have some naming restrictions, have scoping properties that depend on where they are declared, and can have user metadata attached to them. Like C, there are several standard data types. Unlike C, there are also additional data types defined by HLSL to help maximize the performance of 4-component vectors that use matrix math to operate on 3D graphics data.

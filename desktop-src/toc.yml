@@ -295,8 +295,10 @@
               href: ./direct3d11/atoc-dx-graphics-direct3d-11.md
             - name: "DXGI"
               href: ./direct3ddxgi/dx-graphics-dxgi.md
-            - name: "HLSL"
-              href: ./direct3dhlsl/dx-graphics-hlsl.md
+            - name: "HLSL Legacy"
+              href: ./direct3dhlsl_legacy/dx-graphics-hlsl.md
+            - name: "HLSL Current"
+              href: ./direct3dhlsl_current/hlsl-landing-page.md
             - name: "DDS"
               href: ./direct3ddds/dx-graphics-dds.md
           - name: "DXCore"
