@@ -361,6 +361,8 @@ int sampleArray[2] = {0, 1};
 int sampleArray[] = {0, 1};
 ```
 
+>**Note** The C++ array initialization in the form of `int sampleArray[2] {0, 1};` is invalid in HLSL.  When initializing an array, HLSL requires the assigment operator `=`. 
+
 ### Multi-dimensional arrays
 
 HLSL supports declaration and usage of multi-dimensional arrays.
@@ -372,7 +374,7 @@ int multiDimArray[2][3] = {
 };
 ```
 
->**Note** The compiler stores data linearly in a multi-dimensional array.  In the above example, the laid out data is as follows: {`0`, `1`, `2`, `3`, `4`, `5`}
+>**Note** The compiler stores data linearly in a multi-dimensional array.  In the above example, the laid out data is as follows internally: {`0`, `1`, `2`, `3`, `4`, `5`}
 
 ### Out-of-bound array accesses
 By default, DXC errors out when finding constant index references to an array, which is out of bound. For example, the following HLSL shader fails to compile with an error message: `error: array index 3 is out of bounds`. You could turn this error into a warning by setting the language version to 2016 (that is, by using the `-HV 2016` flag) only when the out-of-bound access happens in the unused or dead code.

@@ -2,6 +2,7 @@
   href: hlsl-landing-page.md
   items:
   - name: "Using the Compiler"
+    href: hlsl-using_compiler_landing.md
     items:
     - name: "Migrating to Current Compiler"
       href: hlsl_using_compiler_migrating.md
@@ -15,6 +16,7 @@
     - name: "Using the DLL"
       href: hlsl_using_compiler_dll.md
   - name: "HLSL Language"
+    href: hlsl-language_landing.md
     items:
       - name: "Variables"
         href: hlsl-language-variables.md
@@ -102,6 +104,7 @@
       - name: "Root Signatures"
         href: hlsl-language-root-signatures.md
   - name: "HLSL Built-ins"
+    href: hlsl-built-ins_landing.md
     items:
       - name: "Preproccessor Directives"
         href: hlsl-built-ins-preprocess.md
@@ -554,6 +557,7 @@
       - name: "Raytracing Payload Access Qualifiers"
         href: hlsl-built-ins-raytracing-payload-access-qualifiers.md
   - name: "Appendix"
+    href: hlsl-appendix-landing.md
     items:
       - name: "HLSL Language Versions"
         href: hlsl-appendix-language-versions.md
